@@ -1,17 +1,20 @@
 .App{
   text-align: center;
 }
+.header{
+  margin-top: 30px;
+}
 .icon{
   margin-left: 20px;
   color:grey;
   font-size: 24px;
 }
 .navigator{
-  margin-top: -20px;
-  display: 'flex';
-  justify-content: 'center';
-  align-items: 'center';
-}
+     margin-top: -20px;
+     display: 'flex';
+     justify-content: 'center';
+     align-items: 'center';
+     }
 .pull-right{
   position: absolute;
   right: 40px;
@@ -30,6 +33,10 @@
   position: absolute;
   margin-left: 5px;
   font-weight: bold;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  height: 50px;
 }
 .search_input{
   width: 950px;
@@ -40,6 +47,14 @@
   outline: none;
   
 }
+/* .list_item{
+  margin: 50px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  row-gap: 20px;
+  
+
+} */
 input[type="text"]::placeholder {  
   
   font-size: 16px;
