@@ -1,20 +1,28 @@
 .App{
   text-align: center;
 }
-.header{
-  margin-top: 30px;
-}
+
 .icon{
   margin-left: 20px;
   color:grey;
   font-size: 24px;
+  cursor: pointer;
+}
+span{
+  cursor: pointer;
 }
 .navigator{
+    position: relative;
      margin-top: -20px;
      display: 'flex';
-     justify-content: 'center';
-     align-items: 'center';
-     }
+     /* justify-content: 'center';
+     align-items: 'center'; */
+
+}
+.icon:hover{
+  color:black;
+
+}
 .pull-right{
   position: absolute;
   right: 40px;
@@ -32,29 +40,43 @@
 .menu_bar{
   position: absolute;
   margin-left: 5px;
+  margin-top: 10px;
   font-weight: bold;
   display: 'flex';
   justify-content: 'center';
   align-items: 'center';
   height: 50px;
 }
+
 .search_input{
   width: 950px;
-  border-radius: 20px;
-  height: 40px;
-  background-color:#d0d0d0;
+  border-radius: 25px;
+  height: 50px;
+  background-color:#efefef;
   border: none;
   outline: none;
   
 }
-/* .list_item{
-  margin: 50px;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  row-gap: 20px;
-  
+.search_input:hover{
+  background-color: #d0d0d0;
+}
+.list_item{
+ /* opacity: 0.5; */
 
-} */
+}
+.cover_scresen{
+  
+    /* display: none; Hidden by default */
+    /* display: absolute; */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100vw; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
 input[type="text"]::placeholder {  
   
   font-size: 16px;

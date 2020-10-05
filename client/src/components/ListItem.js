@@ -1,21 +1,63 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect , useRef} from 'react';
 import Item from './Item'
 
 const ListItem = () => {
-    const elements = new Array(20).fill(null)
-    const urls = ['https://images.unsplash.com/photo-1516475429286-465d815a0df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
-,'https://i.pinimg.com/564x/b1/15/ab/b115abe638f99d9d22631bfe4bee4bbd.jpg']
-    console.log(elements);
-    // const array_height = [{h:100,top:}]
-    //  const array_height = [100,200,400,300,500,500,300,400,200,100]
-    // const margin_top = [0,0,0,0,0,350,250,50,150,-50]
+    console.log("render");
+
+    const loop = useRef(null)
+    const [index, setIndex] = useState(0)
+    const elements = new Array(30).fill(null)
+    const urls = ['https://i.pinimg.com/564x/97/fa/95/97fa95361233553fc2408b86b6caf088.jpg','https://i.pinimg.com/564x/31/52/be/3152be1dff04e935295ecb80b5163b86.jpg',
+    'https://i.pinimg.com/564x/b1/15/ab/b115abe638f99d9d22631bfe4bee4bbd.jpg','https://i.pinimg.com/originals/a5/0d/41/a50d41d5937fca532604e6aa70eed720.jpg','https://i.pinimg.com/564x/13/62/06/136206ffc7df7994e21f230f0aae5ed3.jpg','https://i.pinimg.com/564x/b6/f4/c4/b6f4c4821c0f0f93ad3a87c26235fae1.jpg']
+    const topics = ['weeknight dinner idea', 'home decor idea', 'green thumb idea', 'new look outfit']
+    const style = [{color:'#f29705',animation:'fadein 1.5s',animationFillMode:'forwards'},{color:'#eb4034',animation:'fadein 1.5s',animationFillMode:'forwards'},
+    {color:'#54823b',animation:'fadein 1.5s',animationFillMode:'forwards'},{color:'#0075d3',animation:'fadein 1.5s',animationFillMode:'forwards'}]
+
+    // const style_item =
+
+    const handleClickDot = (e) => {
+        e.preventDefault();
+        // console.log(e.target.id);
+        setIndex(e.target.id)
+    }
+
+    useEffect(() =>{
+		if(loop.current) clearInterval(loop.current) 
+		loop.current = setInterval(() =>{
+			setIndex(index => (index + 1) % 4)
+		},3000)
+    },[])
+    
+    const Topic = (props) => {
+        console.log('topic');
+        return (
+            <p className="content_topic" style={props.style}>{props.topic}</p>
+        )
+    }
+	
+
     return (
-        <div className="list_item">
-            {
-                elements.map((index,e) =>(
-                    <Item  index={e} url={urls[Math.floor(Math.random() * 2)]} />
-                ))
-            }
+        <div>
+            <div className="content">
+                <p className="content_title">Get your next</p>
+                <Topic style={style[index]} topic={topics[index]} />
+                <p className="round_dots">
+                    <span className="dot" id="0" style={{ backgroundColor: index == 0 ? '#f29705' : 'grey' }} onClick={handleClickDot}></span>
+                    <span className="dot" id="1" style={{ backgroundColor: index == 1 ? '#eb4034' : 'grey' }} onClick={handleClickDot}></span>
+                    <span className="dot" id="2" style={{ backgroundColor: index == 2 ? '#54823b' : 'grey' }} onClick={handleClickDot}></span>
+                    <span className="dot" id="3" style={{ backgroundColor: index == 3 ? '#0075d3' : 'grey' }} onClick={handleClickDot}></span>
+
+                </p>
+            </div>
+
+            <div className="list_item"
+            >
+                {
+                    elements.map((index, e) => (
+                        <Item key={e} index={e} url={urls[Math.floor(Math.random() * 6)]}  />
+                    ))
+                }
+            </div>
         </div>
     )
 }
