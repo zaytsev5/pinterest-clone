@@ -39,7 +39,7 @@ const ListItem = () => {
     return (
         <div>
             <div className="content">
-                <p className="content_title">Get your next</p>
+                <p className="content_title">Get your next(NguyenVanHia)</p>
                 <Topic style={style[index]} topic={topics[index]} />
                 <p className="round_dots">
                     <span className="dot" id="0" style={{ backgroundColor: index == 0 ? '#f29705' : 'grey' }} onClick={handleClickDot}></span>
