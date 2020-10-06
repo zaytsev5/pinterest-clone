@@ -8,7 +8,7 @@ const MenuBar = () => {
                 lineHeight: '30px',
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
             }}
         >
             <span>
@@ -16,7 +16,7 @@ const MenuBar = () => {
                     style={{
                         width:'35px',
                         height:'40px',
-                        borderRadius: '50%'
+                        borderRadius: '50%',
                     }}
                     src='https://store-images.s-microsoft.com/image/apps.20533.14204669951057618.a5b88d7a-f1d0-405e-bf0f-ad56ef1deeeb.f59c8a19-ebb3-4a45-b461-f44c673e5432'
                 />
