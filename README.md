@@ -1,1 +1,1 @@
-# pinterest-clone hello guys
+# pinterest-clone hello guy
